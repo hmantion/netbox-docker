@@ -1,0 +1,24 @@
+version: '3.4'
+services:
+  netbox:
+    ports:
+    - 8080:8080
+    volumes:
+    - c:\Temp\Docker\Netbox\netbox\config:/etc/netbox/config:z,ro
+    - c:\Temp\Docker\Netbox\netbox\media:/opt/netbox/netbox/media:z,rw
+    - c:\Temp\Docker\Netbox\netbox\reports:/opt/netbox/netbox/reports:z,rw
+    - c:\Temp\Docker\Netbox\netbox\scripts:/opt/netbox/netbox/scripts:z,rw
+    healthcheck:
+      retries: 15
+  netbox-worker:
+    volumes:
+    - c:\Temp\Docker\Netbox\netbox\config:/etc/netbox/config:z,ro
+    - c:\Temp\Docker\Netbox\netbox\media:/opt/netbox/netbox/media:z,rw
+    - c:\Temp\Docker\Netbox\netbox\reports:/opt/netbox/netbox/reports:z,rw
+    - c:\Temp\Docker\Netbox\netbox\scripts:/opt/netbox/netbox/scripts:z,rw
+  netbox-housekeeping:
+    volumes:
+    - c:\Temp\Docker\Netbox\netbox\config:/etc/netbox/config:z,ro
+    - c:\Temp\Docker\Netbox\netbox\media:/opt/netbox/netbox/media:z,rw
+    - c:\Temp\Docker\Netbox\netbox\reports:/opt/netbox/netbox/reports:z,rw
+    - c:\Temp\Docker\Netbox\netbox\scripts:/opt/netbox/netbox/scripts:z,rw
