@@ -22,3 +22,16 @@ services:
     - c:\Temp\Docker\Netbox\netbox\media:/opt/netbox/netbox/media:z,rw
     - c:\Temp\Docker\Netbox\netbox\reports:/opt/netbox/netbox/reports:z,rw
     - c:\Temp\Docker\Netbox\netbox\scripts:/opt/netbox/netbox/scripts:z,rw
+ # postgres
+  postgres:
+    volumes:
+    - c:\Temp\Docker\Netbox\postgres\data:/var/lib/postgresql/data
+
+  # redis
+  redis:
+    volumes:
+    - c:\Temp\Docker\Netbox\redis\data:/data
+  redis-cache:
+    volumes:
+    - c:\Temp\Docker\Netbox\redis\cache:/data
+
